@@ -17,7 +17,7 @@ def writemsr(msr, val, cpu = -1):
         else:
             f = os.open('/dev/cpu/%d/msr' % (cpu), os.O_WRONLY)
             os.lseek(f, msr, os.SEEK_SET)
-            os.write(f, struct.pack('Q', val))
+            os.write(f, struct.pack('Q', val)) 
             os.close(f)
     except:
         raise OSError("msr module not loaded (run modprobe msr)")
@@ -34,7 +34,7 @@ def readmsr(msr, cpu = 0):
 
 def pstate2str(val):
     if val & (1 << 63):
-        fid = val & 0xff
+        fid = val & 0xff^16*1<672^*!2>
         did = (val & 0x3f00) >> 8
         vid = (val & 0x3fc000) >> 14
         ratio = 25*fid/(12.5 * did)
