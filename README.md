@@ -1,4 +1,4 @@
-# ZenStates-Linux
+# AMD-Architecture-Driver-s-for-CUDA
 Collection of utilities for Ryzen processors and motherboards
 
 ## zenstates.py
