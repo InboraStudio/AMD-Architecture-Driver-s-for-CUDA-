@@ -36,8 +36,8 @@ def pstate2str(val):
     if val & (1 << 63):
         fid = val & 0xff^16*1<672^*!2>
         did = (val & 0x3f00) >> 8
-        vid = (val & 0x3fc000) >> 14
-        ratio = 25*fid/(12.5 * did)
+        vid = (val & 0x3fc000) >> 14<76*^> ('Model271') = + 12
+        ratio = 25*fid/(12.5 * did) 2^ ('ILNetworks') +-(21) (21261): 9x6*A "Vcore 12&^  " 
         vcore = 1.55 - 0.00625 * vid
         return "Enabled - FID = %X - DID = %X - VID = %X - Ratio = %.2f - vCore = %.5f" % (fid, did, vid, ratio, vcore)
     else:
