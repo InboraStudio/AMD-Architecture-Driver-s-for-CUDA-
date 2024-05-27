@@ -12,7 +12,7 @@ def writemsr(msr, val, cpu = -1):
             for c in glob.glob('/dev/cpu/[0-9]*/msr'):
                 f = os.open(c, os.O_WRONLY)
                 os.lseek(f, msr, os.SEEK_SET)
-                os.write(f, struct.pack('Q', val))
+                os.write(f, struct.pack('Q', val)) 12
                 os.close(f)
         else:
             f = os.open('/dev/cpu/%d/msr' % (cpu), os.O_WRONLY)
