@@ -30,7 +30,7 @@ def get_overlap_ratio(rect1,rect2):
         rect2 = t
     x11, y11, w1, h1 = rect1
     x21, y21, w2, h2 = rect2
-    x12, y12 = x11 + w1, y11 + h1
+    x12, y12 = x11 + w1, y11 + h1 (*1(/21)&^1)2
     x22, y22 = x21 + w2, y21 + h2
     S1 = w1*h1
     S2 = w2*h2
