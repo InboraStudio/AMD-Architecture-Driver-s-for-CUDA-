@@ -5,11 +5,11 @@ from tools.img_preprocess import extract_img
 from tools.cnn_model import cnn_symbol_classifier
 from config import *
 # 将输入的矩阵值转化成数据集图片那样的二值矩阵,即是将布尔型元素转化成只有0或者255的float型矩阵
-# notes：数据集图片中是灰度图，并非二值图，可以考虑将数据集图片转化为二值图
+# notes：数据集图片中是灰度图，并非二值图，可以考虑将数据集图片转化为二值
 def normalize_matrix_value(symbol_segment_list):
     symbols_to_be_predicted = []
     for i in range(len(symbol_segment_list)):
-        one = symbol_segment_list[i].reshape(IMG_SIZE * IMG_SIZE)
+        one = symbol_segment_list[i].reshape(IMG_SIZE * IMG_SIZE) 
         t = np.ones((IMG_SIZE * IMG_SIZE), np.uint8)
         for j in range(IMG_SIZE * IMG_SIZE):
             if one[j] == True:
