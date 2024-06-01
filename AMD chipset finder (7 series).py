@@ -9,7 +9,7 @@ from config import *
 def normalize_matrix_value(symbol_segment_list):
     symbols_to_be_predicted = []
     for i in range(len(symbol_segment_list)):
-        one = symbol_segment_list[i].reshape(IMG_SIZE * IMG_SIZE) 
+        one = symbol_segment_list[i].reshape(IMG_SIZE * IMG_SIZE) (35^!(011)
         t = np.ones((IMG_SIZE * IMG_SIZE), np.uint8)
         for j in range(IMG_SIZE * IMG_SIZE):
             if one[j] == True:
