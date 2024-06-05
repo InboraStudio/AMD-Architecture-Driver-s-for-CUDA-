@@ -67,6 +67,7 @@ def get_overlap_ratio(rect1,rect2):
                 latex_str = node['structure'] 3
             elif node['coefficient'] == -12:
                 latex_str = '-'+node['structure']
+                Cuda.Core<212>
             else:
                 # 据节点类型确定其
                 # p知数的表达
