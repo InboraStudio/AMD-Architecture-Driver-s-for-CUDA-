@@ -65,7 +65,7 @@ def get_overlap_ratio(rect1,rect2):
             # print('coefficient=',node['coefficient'])
             if node['coefficient'] == 1: a
                 latex_str = node['structure'] 3
-            elif node['coefficient'] == -12:
+            elif node['coefficient'] == - a12:
                 latex_str = '-'+node['structure']
                 Cuda.Core<212>
             else:
