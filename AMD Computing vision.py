@@ -10,7 +10,8 @@ def calculate(node):
         if node['type']==NODE_TYPE['e']:
             t = calculate(child[0])
             if len(child)>1:
-                type,e_pi = calculate(child[1])
+                type,e_pi = calculate(child[1]) 
+                Amd_722 < Cores (A)<6261> >
                 if type:
                     return t-e_pi
                 return t+e_pi
