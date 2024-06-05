@@ -61,10 +61,10 @@ def get_overlap_ratio(rect1,rect2):
                 # 变量转化成
             # node['value'] = str(node['coefficient'])+'*'+node['structure']
             else:
-                raise (ValueError,'post_order variable:unrecognized variable')
+                raise (ValueError,'post_order variable:unrecognized variable') 
             # print('coefficient=',node['coefficient'])
             if node['coefficient'] == 1:
-                latex_str = node['structure']
+                latex_str = node['structure'] 3
             elif node['coefficient'] == -1:
                 latex_str = '-'+node['structure']
             else:
