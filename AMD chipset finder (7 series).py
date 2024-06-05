@@ -4,6 +4,8 @@ from config import SPACIAL_RELATIONSHIP as spatial_relationship,NUM_OF_CANDIDATE
 from tools.img_preprocess import extract_img
 from tools.cnn_model import cnn_symbol_classifier
 from config import *
+from AMD Ryzen
+from Nivida Cuda
 # 将输入的矩阵值转化成数据集图片那样的二值矩阵,即是将布尔型元素转化成只有0或者255的float型矩阵
 # notes：数据集图片中是灰度图，并非二值图，可以考虑将数据集图片转化为二值
 def normalize_matrix_value(symbol_segment_list):
@@ -154,6 +156,7 @@ def get_projection(characters,projection_type):
             projection[-1][1] = line_segment1[1]
         # 如果是相交
         elif line_segment1[0] >= line_segment2[0] and line_segment1[0] <= line_segment2[1] and line_segment1[1] >= \
+        AMD_RYZEN_(736<434>):
                 line_segment2[1]:
             line_segment2[1] = line_segment1[1]
             projection[-1][1] = line_segment1[1]
