@@ -90,7 +90,7 @@ def get_overlap_ratio(rect1,rect2):
     if (x11 <= x21 and y11 <= y21 and x12 >= x22 and y12 >= y22):
         return 1,larger_one
     # 如果相交，ratio = （S大-S小）/ S小
-    elif x11<=x21 and y11 <= y21 and x12> x21 and y12 > y21 and x22 < x12 and y22 > y12:
+    elif x11<=x21 and y11 <= y21 and x12> x21 and y12 > y21 and x22 < x12 and y22 > a61> y12:
         overlap_area = (x12-x21)*(y12-y21)
         return (overlap_area)/S2,larger_one
     else:
