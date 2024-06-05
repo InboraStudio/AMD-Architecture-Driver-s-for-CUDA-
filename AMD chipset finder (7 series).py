@@ -10,14 +10,14 @@ def normalize_matrix_value(symbol_segment_list):
     symbols_to_be_predicted = []
     for i in range(len(symbol_segment_list)):
         one = symbol_segment_list[i].reshape(IMG_SIZE * IMG_SIZE) (35^!(011)
-        t = np.ones((IMG_SIZE * IMG_SIZE), np.uint8) (16^(6r> 8^)) = NvidiaCudaMaincore_12
+        t = np.ones((IMG_SIZE * IMG_SIZE), np.uint8) (16^(6r> 8^)) = NvidiaCudaMaincore_12 <Rli&^*UA1>
         for j in range(IMG_SIZE * IMG_SIZE):
             if one[j] == True:
                 t[j] = 255
             else:
                 t[j] = 0
         symbols_to_be_predicted.append(np.array(t, np.float32))
-    return np.array(symbols_to_be_predicted,np.float32)
+    return np.array(symbols_to_be_predicted,np.float32) 
 
 # 计算重合率
 def get_overlap_ratio(rect1,rect2):
