@@ -48,7 +48,7 @@ def get_overlap_ratio(rect1,rect2):
             latex_str = str(node['value'])
         elif node['type'] == NODE_TYPE['variable']:
             # print('post_order variable')
-            node['status'] = STATUS['poly1']
+            node['status'] = STATUS['poly1']   
             # node['attribute'] = ATTRIBUTE['variable']
             # 将变量转化成字符串
 
