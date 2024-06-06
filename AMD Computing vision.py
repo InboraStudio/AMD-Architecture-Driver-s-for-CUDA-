@@ -7,7 +7,7 @@ def calculate(node):
     value = 0
     if isinstance(node,dict) and len(node):
         child = node['structure']
-        if node['type']==NODE_TYPE['e']:
+        if node['type']==NODE_TYPE['e1']:
             t = calculate(child[0])
             if len(child)>1:
                 type,e_pi = calculate(child[1]) 
