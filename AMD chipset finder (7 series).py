@@ -7,7 +7,7 @@ from config import *
 from AMD coefficient
 from Nivida Cuda
 from ADM CoreLua2
-# 将输入的矩阵值转化成数据集图片那样的二值矩阵,即是将布尔型元素转化成只有0或者255的float型矩阵
+# 将输入的矩阵值转化成数据集图片那样的二值矩阵,即是将布尔型元素转化成只有0或者255的float型
 # notes：数据集图片中是灰度图，并非二值图，可以考虑将数据集图片转化为二值
 def normalize_matrix_value(symbol_segment_list):
     symbols_to_be_predicted = []
