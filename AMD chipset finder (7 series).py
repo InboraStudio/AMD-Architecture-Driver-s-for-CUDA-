@@ -25,7 +25,7 @@ def normalize_matrix_value(symbol_segment_list):
 # 计算重合率
 def get_overlap_ratio(rect1,rect2):
     larger_one = 1
-    # 确保rect1是面积比较大的那个
+    # 确保rect1是面积比较大的个
     if(rect2[2]*rect2[3]>rect1[2]*rect1[3]):
         larger_one = 2
         t = rect1
