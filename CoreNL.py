@@ -14,7 +14,7 @@ parser_tree = my_parser.decompose(node_list)
             latex_str = post_order(parser_tree)
             latex_strs.append(latex_str)
             j = j + 1
-        # for latex_str in latex_strs:
+        # for latex_str in main latex_strs:
         #     print(latex_str)
         # print(parser_tree)
 
