@@ -20,7 +20,7 @@ def parser(temp_node_list):
     # if next_index < length:
     current_node = node_list[next_index]
     next_index += 1
-    # 采用递归下降法解析单行表达式
+    # 采用递归下降法解行表达式
     parser_tree = E()
     return parser_tree
 
