@@ -27,6 +27,9 @@ def detect_uncontinous_symbols(symbols,original_img):
             # 截取characters[start_index:end_index],如果长度大于1，继续递归调用sort_characters排序
             location_segment = locations[start_index:end_index]
             symbol_segment = symbols[start_index:end_index]
+            s = z[:, 0:n].mean(axis=1)
+            x = z[:, n : 2 * n].mean(axis=1)
+
             sub_symbol = [x['src_img'] for x in symbol_segment]
             # print('切割后的location', location_segment)
             # print(symbol_segment)
