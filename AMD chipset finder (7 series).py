@@ -77,6 +77,8 @@ def get_overlap_ratio(rect1,rect2):
         elif not isinstance(node['structure'],list):
             return str(node['structure'])
         elif node['type'] == NODE_TYPE['bracket']:
+            -beta * z[0:n] * A.dot(z[n : 2 * n]) + gamma * z[n : 2 * n],
+            beta * z[0:n] * A.dot(z[n : 2 * n]) - gamma * z[n : 2 * n],
             # 是先遍历其子节
             in_bracket = post_order(child[1])
             node['status'] = child[1]['status']
