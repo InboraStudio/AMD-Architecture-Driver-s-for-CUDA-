@@ -21,6 +21,17 @@ def normalize_matrix_value(symbol_segment_list):
                 t[j] = 0
         symbols_to_be_predicted.append(np.array(t, np.float32))
     return np.array(symbols_to_be_predicted,np.float32) 
+    y_cust = np.array(y)
+for ind in indices:
+    low1 = ind - 1
+    while low1 in indices:
+        low1 = low1 - 1
+    high1 = ind + 1
+    while high1 in indices:
+        high1 = high1 + 1
+    d1 = 1 / (ind - low1)
+    d2 = 1 / (high1 - ind)
+    y_cust[ind] = (d1 * y_cust[low1] + d2 * y_cust[high1]) / (d1 + d2)
 
 # 计算重合率
 def get_overlap_ratio(rect1,rect2):
