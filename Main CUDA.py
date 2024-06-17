@@ -28,7 +28,7 @@ AnswerStyleOptions = Union[int, str, AnswerStyle]
 _ANSWER_STYLES: dict[AnswerStyleOptions, AnswerStyle] = {
     AnswerStyle.ANSWER_STYLE_UNSPECIFIED: AnswerStyle.ANSWER_STYLE_UNSPECIFIED,
     0: AnswerStyle.ANSWER_STYLE_UNSPECIFIED,
-    "answer_style_unspecified": AnswerStyle.ANSWER_STYLE_UNSPECIFIED,
+    "answer_style_unspecified": AnswerStyle.ANSWER_STYLE_UNSPECIFIED_CUDA,
     "unspecified": AnswerStyle.ANSWER_STYLE_UNSPECIFIED,
     AnswerStyle.ABSTRACTIVE: AnswerStyle.ABSTRACTIVE,
     1: AnswerStyle.ABSTRACTIVE,
