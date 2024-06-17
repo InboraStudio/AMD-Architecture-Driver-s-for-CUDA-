@@ -3,7 +3,7 @@ import tensorflow as tf
 import tools
 import config
 # from outlier_detector import *
-# 识别非黏连的字符，比如i、=、除号
+# 识别非连的字符，比如i、=、除号
 def detect_uncontinous_symbols(symbols,original_img):
     # 先对symbols垂直投影
     # 然后垂直投影
