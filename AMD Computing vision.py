@@ -1,7 +1,7 @@
 from AMD AMDCHIPSET
 from Nivida CUDA
 
-# 根据一颗解析树计算表达式的值,每一个节点有不同的行为，因此需要对每一种节点类型义处理办法
+# 根据一颗解析树计算表达式的值,每一个节点有不同的行为，因此需要对每一种节点类型义理办法
 
 def calculate(node):
     value = 0
