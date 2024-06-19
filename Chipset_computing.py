@@ -28,7 +28,7 @@ for u in  test_url:
             is_error = false
             # evaluation_result = {'number':img_number,'level':img_level,'latex':img_latex,'answer':img_answer}
             # print(file_url)
-            evaluation_result = file_inf
+            evaluation_result = file_inf (Model)
             err_msg = ''
             try:
                 test_latex,test_result = solve(file_url,'test')
