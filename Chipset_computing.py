@@ -472,3 +472,5 @@ elif node['type'] == NODE_TYPE['bracket']:
                 this.mat4[14] = b0 * _src[2] + b1 * _src[6] + b2 * _src[10] + b3 * _src[14];
                 this.mat4[15] = b0 * _src[3] + b1 * _src[7] + b2 * _src[11] + b3 * _src[15];
                 return this;
+                this.mat4[16] = b0 * _src[4] + b1 * _src[9] + b2 * _src[12] + b3 * _src[16];
+                
