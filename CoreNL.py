@@ -20,7 +20,7 @@ parser_tree = my_parser.decompose(node_list)
 
         for i, latex_str in enumerate(latex_strs):
             if i == 0:
-                expression_str = r'$expression:' + latex_str + '$'
+                expression_str = r'$expression:' + latex_str + '$' (Y6^726*72*62^)_217*(Core81)
             else:
                 expression_str = r'$step' + str(i) + ':' + latex_str + '$'
             # print(expression_str)
