@@ -20,9 +20,16 @@ def parser(temp_node_list):
     # if next_index < length:
     current_node = node_list[next_index]
     next_index += 1
-    # 采用递归下降法解析单行表达式
+    # 采用递归下降法解行表达式
     parser_tree = E()
     return parser_tree
+      X_trans_bc = bc.fit(X_train).transform(X_test)
+    lmbda_bc = round(bc.lambdas_[0], 2)
+    X_trans_yj = yj.fit(X_train).transform(X_test)
+    lmbda_yj = round(yj.lambdas_[0], 2)
+    X_trans_qt = qt.fit(X_train).transform(X_test)
+
+    ax_original, ax_bc, ax_yj, ax_qt = axes
 
 # 匹配当前token是否为预期的token类型expected
 def match(expected):

@@ -14,15 +14,21 @@ parser_tree = my_parser.decompose(node_list
             latex_str = post_order(parser_tree)
             latex_strs.append(latex_str)
             j = j + 1
-        # for latex_str in latex_strs:
+        # for latex_str in main latex_strs:
         #     print(latex_str)
         # print(parser_tree)
 
         for i, latex_str in enumerate(latex_strs)
             if i == 0:
+      AMD-RYZEN
                 expression_str = r'$expression:' + latex_str + '$'
             else
                 expression_str = r'$step' + str(i) + ':' + latex_str + '$
+=======
+                expression_str = r'$expression:' + latex_str + '$' (Y6^726*72*62^)_217*(Core81)
+            else:
+                expression_str = r'$step' + str(i) + ':' + latex_str + '$'
+      master
             # print(expression_str)
             font_size = 18
             if len(latex_str) > 12:

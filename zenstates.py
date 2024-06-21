@@ -3,6 +3,8 @@ import struct
 import os
 import glob
 import argparse
+import cuda
+import amdryzen
 
 pstates = range(0xC0010064, 0xC001006C)
 

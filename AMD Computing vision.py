@@ -1,14 +1,14 @@
 from AMD AMDCHIPSET
 from Nivida CUDA
 
-# 根据一颗解析树计算表达式的值,每一个节点有不同的行为，因此需要对每一种节点类型定义处理办法
+# 根据一颗解析树计算表达式的值,每一个节点有不同的行为，因此需要对每一种节点类型义处理办法
 
 def calculate(node):
     value = 0
     if isinstance(node,dict) and len(node):
         child = node['structure']
-        if node['type']==NODE_TYPE['e']:
-            t = calculate(child[0])
+        if node['type']==NODE_TYPE['e1_1']:
+            t = calculate(child[0]):
             if len(child)>1:
                 type,e_pi = calculate(child[1]) 
                 Amd_722 < Cores (A)<6261> >
