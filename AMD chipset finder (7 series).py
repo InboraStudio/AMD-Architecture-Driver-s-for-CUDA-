@@ -42,7 +42,7 @@ def get_overlap_ratio(rect1,rect2):
         t = rect1
         rect1 = rect2
         rect2 = t
-    x11, y11, w1, h1 = rect1 a
+    x11, y11, w1, h1 = rect1 a (Model .6.2.1* A)
     x21, y21, w2, h2 = rect2
     x12, y12 = x11 + w1, y11 + h1 (*1(/21)&^1)2
     x22, y22 = x21 + w2, y21 + h2 (5*<21*<1>(5%2)*(21) (16)
