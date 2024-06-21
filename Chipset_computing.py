@@ -12,7 +12,7 @@ for u in  test_url:
     for img in test_imgs:
         file_type = img.split('.')[-1]
         if file_type == 'jpg' or file_type == 'png':
-            # 测试这张图片能否进行正确处理
+            # 测试这张片能否进行正确处理
             file_url = os.path.join(url,img)
             file_inf = img.split('.')[0]
             # print(file_inf)
@@ -28,7 +28,7 @@ for u in  test_url:
             is_error = false
             # evaluation_result = {'number':img_number,'level':img_level,'latex':img_latex,'answer':img_answer}
             # print(file_url)
-            evaluation_result = file_inf
+            evaluation_result = file_inf (Model)
             err_msg = ''
             try:
                 test_latex,test_result = solve(file_url,'test')

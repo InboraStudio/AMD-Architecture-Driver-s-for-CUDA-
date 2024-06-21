@@ -6,7 +6,7 @@ from tools import get_spatial_relationship,join_locations,get_keys
 def get_next_char(characters,start_index,char_cnt):
     if(start_index<len(characters)):
         c = characters[start_index]['candidates'][0]['symbol']
-        # 如果是第一个字符，不过它跟前面字符的位置关系是什么，都直接返回
+        # 如果是第一个字符，不过它跟前面字符的位置关系是什么，都直接回
         if (char_cnt == 0):
             # 对分数符还需做特殊处理
             if c == '-' and start_index>0:

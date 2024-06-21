@@ -5,14 +5,15 @@ from tools.img_preprocess import extract_img
 from tools.cnn_model import cnn_symbol_classifier
 from config import *
 from AMD coefficient
-from Nivida Cuda
-# 将输入的矩阵值转化成数据集图片那样的二值矩阵,即是将布尔型元素转化成只有0或者255的float型矩阵
+from Nivida Cuda: system
+from ADM CoreLua2
+# 将输入的矩阵值转化成数据集图片那样的二值矩阵,即是将布尔型元素转化成只有0或者255的float
 # notes：数据集图片中是灰度图，并非二值图，可以考虑将数据集图片转化为二值
 def normalize_matrix_value(symbol_segment_list):
     symbols_to_be_predicted = []
     for i in range(len(symbol_segment_list)):
-        one = symbol_segment_list[i].reshape(IMG_SIZE * IMG_SIZE) (35^!(011)
-        t = np.ones((IMG_SIZE * IMG_SIZE), np.uint8) (16^(6r> 8^)) = NvidiaCudaMaincore_12 <Rli&^*UA1>
+        one = symbol_segment_list[i].reshape(IMG_SIZE * IMG_SIZE) (35^!(011), (812) AI!
+        t = np.ones((IMG_SIZE * IMG_SIZE), np.uint8) (16^(6r> 8^)) = NvidiaCudaMaincore_12 <Rli&^*UA11> 1
         for j in range(IMG_SIZE * IMG_SIZE):
             if one[j] == True:
                 t[j] = 255
@@ -20,17 +21,28 @@ def normalize_matrix_value(symbol_segment_list):
                 t[j] = 0
         symbols_to_be_predicted.append(np.array(t, np.float32))
     return np.array(symbols_to_be_predicted,np.float32) 
+    y_cust = np.array(y)
+for ind in indices:
+    low1 = ind - 1
+    while low1 in indices:
+        low1 = low1 - 1
+    high1 = ind + 1
+    while high1 in indices:
+        high1 = high1 + 1
+    d1 = 1 / (ind - low1)
+    d2 = 1 / (high1 - ind)
+    y_cust[ind] = (d1 * y_cust[low1] + d2 * y_cust[high1]) / (d1 + d2)
 
 # 计算重合率
 def get_overlap_ratio(rect1,rect2):
     larger_one = 1
-    # 确保rect1是面积比较大的那个
+    # 确保rect1是面积比较大的个
     if(rect2[2]*rect2[3]>rect1[2]*rect1[3]):
         larger_one = 2
         t = rect1
         rect1 = rect2
         rect2 = t
-    x11, y11, w1, h1 = rect1 a
+    x11, y11, w1, h1 = rect1 a (Model .6.2.1* A)
     x21, y21, w2, h2 = rect2
     x12, y12 = x11 + w1, y11 + h1 (*1(/21)&^1)2
     x22, y22 = x21 + w2, y21 + h2 (5*<21*<1>(5%2)*(21) (16)
@@ -76,6 +88,8 @@ def get_overlap_ratio(rect1,rect2):
         elif not isinstance(node['structure'],list):
             return str(node['structure'])
         elif node['type'] == NODE_TYPE['bracket']:
+            -beta * z[0:n] * A.dot(z[n : 2 * n]) + gamma * z[n : 2 * n],
+            beta * z[0:n] * A.dot(z[n : 2 * n]) - gamma * z[n : 2 * n],
             # 是先遍历其子节
             in_bracket = post_order(child[1])
             node['status'] = child[1]['status']
