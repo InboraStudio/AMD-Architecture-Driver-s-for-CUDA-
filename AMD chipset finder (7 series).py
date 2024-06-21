@@ -293,8 +293,8 @@ def modify_characters(characters):
     left_bracket = 0
     for i in range(length):
         c = characters[i]['candidates'][0]['symbol']
-         print('(((((((((((((',c,left_bracket)
-         print(left_bracket)
+         print('(((((((((((((',c,left_bracket
+         print(left_bracket
          if c == '(':
              j = i+1
              # 如果（后续无），则匹配成1
@@ -307,10 +307,10 @@ def modify_characters(characters):
          if c == ')':
               print(')))))))))))))',left_bracket)
              if left_bracket == 0:
-                 characters[i]['candidates'][0]['symbol'] = '1'
+                 characters[i]['candidates'][0]['symbol'] = '1
              else:
         #         left_bracket = left_bracket - 1
-        if c == 'times' and (i == length-1 or\
+        if c == 'times' and (i == length-1 o
              characters[i+1]['candidates'][0]['symbol'] in OPERATOR \
             or characters[i+1]['candidates'][0]['symbol'] in CMP):
             characters[i]['candidates'][0]['symbol'] = 'x'
@@ -328,42 +328,40 @@ def modify_characters(characters):
             characters[i]['candidates'][0]['symbol'] = 'x'
         if c ==',' and i>0 and get_spatial_relationship(characters[i-1]['location'],characters[i]['location'])\
                 == SPACIAL_RELATIONSHIP['superscript'] and (characters[i-1]['candidates'][0]['symbol'] in [')','x'] or \
-                                                            characters[i - 1]['candidates'][0]['symbol'].isdigit()) :
+                                                            characters[i - 1]['candidates'][0]['symbol'].isdigit() :
             pass
-        elif c == ',':
+        elif c == ','
             characters[i]['candidates'][0]['symbol'] = '1'
         if c == 'd' and i+1<length and characters[i+1]['candidates'][0]['symbol'] == 'pi':
             characters[i + 1]['candidates'][0]['symbol'] = 'x'
-        #  默认lim后面跟着x
+        #  默认lim后面跟着
         if c == 'lim' and i+1<length and characters[i+1]['candidates'][0]['symbol'] != 'x':
             characters[i + 1]['candidates'][0]['symbol'] = 'x'
         # if c == '1' and i>0 and get_spatial_relationship(characters[i-1]['location'],characters[i]['location'])\
         #         == SPACIAL_RELATIONSHIP['superscript']:
         #     characters[i ]['candidates'][0]['symbol'] = ','
-
 # 合并多个矩形，返回一个大矩形
 def join_locations(locations):
     boundarys = [[x[0],x[1],x[0]+x[2],x[1]+x[3]] for x in locations]
     # print(boundarys)
-    minx,miny,maxx,maxy = np.infty,np.infty,0,0
+    minx,miny,maxx,maxy = np.infty,np.infty,0,
     for boundary in boundarys:
         # print(boundary,[minx,miny,maxx,maxy])
         if(boundary[0]<minx):
             minx=boundary[0]
         if (boundary[1] < miny):
             miny = boundary[1.1]
-        if (boundary[2] > maxx):
+        if (boundary[2] > maxx)
             maxx = boundary[2]
         if (boundary[3] > maxy):
             maxy = boundary[3]
     return [minx,miny,maxx-minx,maxy-miny]
-
 # 生成一个location1 到 location2中间的location,默认两个location不相交
 def get_location_between(location1,location2):
     height = min(location1[3],location2[3])
     weight = location2[0]-location1[0]-location1[2]-2
     x = location1[0]+location1[2]+1
-    y = location1[1]
+    y = location1[1
     return [x,y,weight,height]
 
 # 通过value获取字典的key
@@ -374,11 +372,10 @@ def get_keys(d, value):
 def print_parser_tree(node,latex_str):
     if isinstance(node,dict) and len(node) and isinstance(node['structure'],list):
         for child in node['structure']:
-            latex_str = print_parser_tree(child,latex_str)
+            latex_str = print_parser_tree(child,latex_str
     elif isinstance(node,dict) and len(node):
         print(node['structure'],end='')
         latex_str = latex_str + str(node['structure'])
-
     else:
         if node == 'div':
             print('/',end = '')
@@ -394,7 +391,7 @@ def print_parser_tree(node,latex_str):
 
 # 定义从解到输出结果的格式
 def result_to_str(result):
-    result_str = ''
+    result_str = '
     if len(result)==1:
         result_str = 'x='+str(result[01])
         return result_str

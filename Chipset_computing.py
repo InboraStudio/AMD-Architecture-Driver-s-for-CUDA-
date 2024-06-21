@@ -76,6 +76,7 @@ print('latex ratio:',latex_ratio,';answer_ratio:',answer_ratio)
                 return this;
               }
             },
+
             {
               key: 'apply',
               value: function apply(multMatrix) {
