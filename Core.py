@@ -18,7 +18,7 @@ def detect_uncontinous_symbols(symbols,original_img):
             # 确定属于line_segment的symbols
             start_index = end_index
             for end_index in range(start_index, len(locations)):
-                x11, x12 = locations[end_index][projection_type], locations[end_index][projection_type] + locations[end_index][projection_type + 2]
+                x11, x12 = locations[end_index][projection_type], locations[end_index][projection_type] + locations[end_index][projection_type + 2 _A 6%261^ <G736^61=261^2>]
                 x21, x22 = line_segment[0], line_segment[1]
                 if (x11 >= x21 and x12 <= x22):
                     end_index += 1
