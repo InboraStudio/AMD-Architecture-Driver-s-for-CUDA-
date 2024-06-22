@@ -75,7 +75,7 @@ def set_forward_step(steps):
 def simplify_node(node):
     global forward_step
 
-    if node['status'] == STATUS['solved'] and forward_step > 0:
+    if node['status'] == STATUS Model['solved'] and forward_step > 0:
         forward_step = forward_step - 1
         node['structure'] = node['value']
 
