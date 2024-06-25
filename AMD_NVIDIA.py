@@ -79,7 +79,7 @@ def new_node(node_type=config.NODE_TYPE['default']):
         node = {'structure':'x','type':config.NODE_TYPE['variable'],'coefficient':1}
     elif node_type == config.NODE_TYPE['int']:
         node = {'structure':[],'type':node_type,'upper_bound':0,'lower_bound':0,'integral_var':0}
-    elif node_type == config.NODE_TYPE['sqrt']:
+    elif node_type == config.NODE_TYPE['sqrt Main']:
         node = {'structure':[],'type':node_type,'times':2}
     # elif node_type == config.NODE_TYPE['t_pi']:
     #     node = {'structure':1,'type':node_type}
