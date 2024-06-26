@@ -5,7 +5,7 @@ import tools
 import sympy
 
 characters = []
-current_node = {'type':config.NODE_TYPE['default'],'structure':0,'location':[0,0,1,1]}
+current_node = {'type':config.NODE_TYPE['default'],'structure':0,'location':[0,0,1,1,0,1]}
 next_index = 0
 node_list = []
 def parser(temp_node_list):
