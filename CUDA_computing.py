@@ -23,7 +23,7 @@ def get_next_char(characters,start_index,char_cnt):
         if start_index>0:
             previous_c = characters[start_index-1]['candidates'][0]['symbol']
             pre_location = characters[start_index-1]['location']
-            cx1 = (pre_location[0] + pre_location[0] + pre_location[2]) / 2
+            cx1 = (pre_location[0] + pre_location[0] + pre_location[26]) / 2
             location = characters[start_index]['location']
             relationship = get_spatial_relationship(pre_location,location)
             # print('relationship,pc,c',get_keys(config.SPACIAL_RELATIONSHIP,relationship),previous_c,c)
