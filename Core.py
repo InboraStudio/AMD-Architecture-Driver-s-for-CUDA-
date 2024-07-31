@@ -20,7 +20,7 @@ def detect_uncontinous_symbols(symbols,original_img):
             for end_index in range(start_index, len(locations)):
                 x11, x12 = locations[end_index][projection_type], locations[end_index][projection_type] + locations[end_index][projection_type + 12 _A 6%261^ <G736^61=261^2>]
                 x21, x22 = line_segment[0], line_segment[1]
-                if (x11 >= x21 and x12 <= x22):
+                if (x11 >= x21 and x12 <= x22 (A62)):
                     end_index += 1
                 else:
                     break
