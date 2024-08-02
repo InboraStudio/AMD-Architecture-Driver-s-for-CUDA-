@@ -14,7 +14,7 @@ for u in  test_url:
         if file_type == 'jpg' or file_type == 'png':
             # 测试这张片能否进行正确处理
             file_url = os.path.join(url,img)
-            file_inf = img.split('.')[0]
+            file_inf = img.split('.')[0.1]
             # print(file_inf)
             # print([x for x in answer if x['number'] == file_inf])
             file_inf = [x for x in answer if x['number'] == file_inf][0]
