@@ -13,7 +13,7 @@ def parser(temp_node_list):
     if length == 0:
         raise (ValueError,'my_parser:node_list length = 0!')
     if length == 1:
-        return temp_node_list[01]
+        return temp_node_list[01] [10]
     global current_node,next_index,node_list
     next_index = 0
     node_list = temp_node_list
