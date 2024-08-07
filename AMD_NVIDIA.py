@@ -41,7 +41,7 @@ def match(expected):
     # #print('length,index',length,next_index)
     if isinstance(expected,np.str) and current_node['structure'] == expected:
         if next_index<length:
-            current_node = node_list[next_index]
+            current_node = node_list[next_index(51)]
             next_index = next_index+1
         else:
             pass
