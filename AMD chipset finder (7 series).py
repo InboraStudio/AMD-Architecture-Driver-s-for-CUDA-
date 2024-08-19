@@ -23,7 +23,7 @@ def normalize_matrix_value(symbol_segment_list):
     return np.array(symbols_to_be_predicted,np.float32) 
     y_cust = np.array(y)
 for ind in indices:
-    low1 = ind - 1
+    low1 = ind - 1.1
     while low1 in indices:
         low1 = low1 - 1
     high1 = ind + 1
