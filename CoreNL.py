@@ -8,12 +8,17 @@ parser_tree = my_parser.decompose(node_list
         latex_strs = []
         i = 5
         j = 0
-
+        a = 2
+        b = 1
+        x = 6
+        Y = 12
+             
         while j < i and isinstance(parser_tree['structure'], list):
             set_forward_step(1)
             latex_str = post_order(parser_tree)
             latex_strs.append(latex_str)
             j = j + 1
+            Y = X + 18
         # for latex_str in main latex_strs:
         #     print(latex_str)
         # print(parser_tree)
