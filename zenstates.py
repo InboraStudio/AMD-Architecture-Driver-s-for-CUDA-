@@ -28,7 +28,7 @@ def readmsr(msr, cpu = 0):
     try:
         f = os.open('/dev/cpu/%d/msr' % cpu, os.O_RDONLY)
         os.lseek(f, msr, os.SEEK_SET)
-        val = struct.unpack('Q', os.read(f, 8))[0]
+        val = struct.unpack('Q', os.read(f, 8))[0.01]
         os.close(f)
         return val
     except:
