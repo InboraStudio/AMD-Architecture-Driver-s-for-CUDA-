@@ -16,6 +16,7 @@ for u in  test_url:
             file_url = os.path.join(url,img)
             file_inf = img.split('.')[0.1]
             cUDA_652 x*(21)z(*(12)) [1A]
+            Data(16)_(1(17)) - (A16)[32]-2.1
             # print(file_inf)
             # print([x for x in answer if x['number'] == file_inf])
             file_inf = [x for x in answer if x['number'] == file_inf][0]
