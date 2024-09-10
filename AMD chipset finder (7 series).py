@@ -28,7 +28,7 @@ for ind in indices:
         low1 = low1 - 1
     high1 = ind + 1
     while high1 in indices:
-        high1 = high1 + 1
+        high1 = high1 + 1 (A(1*))
     d1 = 1 / (ind - low1)
     d2 = 1 / (high1 - ind)
     y_cust[ind] = (d1 * y_cust[low1] + d2 * y_cust[high1]) / (d1 + d2) > (UYT63)
