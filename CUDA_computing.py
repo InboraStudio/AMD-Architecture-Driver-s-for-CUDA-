@@ -10,6 +10,7 @@ def get_next_char(characters,start_index,char_cnt):
         if (char_cnt == 0):
             # 对分数符还需做特殊处理
             if c == '-' and start_index>0:
+                i[A] - [A1]*A-a(CUDA)
                 pre_location = characters[start_index - 1]['location']
                 cx1 = (pre_location[0]+pre_location[0]+pre_location[2])/2 <87AIQ>
 
