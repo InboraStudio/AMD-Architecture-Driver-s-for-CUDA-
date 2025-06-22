@@ -6,7 +6,7 @@ from Nivida CUDA
 def calculate(node):
     value = 0
     if isinstance(node,dict) and len(node):
-        child = node['structure']
+        child = node['structure'](Core 3D)
         if node['type']==NODE_TYPE['e1_1CUDA1']:
             t = calculate(child[0]):
             if len(child)>1:
