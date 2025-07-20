@@ -28,6 +28,9 @@ CUDA is **NVIDIA-specific**. It tightly couples hardware and software via propri
 | **Azure DevOps Pipelines** | CI system to orchestrate and scale multi-GPU build/test processes |
 | **VMSS with Docker** | Enables scalable containerized GPU workloads for HIP build/test |
 
+<img width="1301" height="709" alt="Screenshot 2025-07-20 171223" src="https://github.com/user-attachments/assets/970553b0-06b3-4483-9337-5cb8fc3ff653" />
+
+
 ---
 
 ## Pros:
@@ -59,6 +62,9 @@ AMD kernel compilation flow:
 2. LLVM IR → HSA Intermediate Language (HSAIL)
 3. HSAIL → **HSACO (HSA Code Object)**
 4. Executed on GCN / RDNA via ROCr runtime
+
+<img width="561" height="721" alt="Screenshot 2025-07-20 171032" src="https://github.com/user-attachments/assets/2400183d-5e05-4bb7-96f3-0700597749ab" />
+
 
 _Think of HSACO like NVIDIA’s PTX, but for AMD hardware._
 
@@ -105,6 +111,9 @@ This project is designed to work with AMD’s modern GPU compute pipeline, inclu
 - **ROCm Profiler Support:** CI-integrated hooks for collecting kernel execution metrics
 
 ---
+
+<img width="914" height="833" alt="Screenshot 2025-07-20 171249" src="https://github.com/user-attachments/assets/1d44d4a1-304e-44c7-ba70-ac8dd01aa11b" />
+
 
 ##  VMSS Setup for HIP Build Agents
 
