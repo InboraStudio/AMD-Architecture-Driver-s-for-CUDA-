@@ -5,16 +5,15 @@
 
 ---
 
-##  Overview
+## Background
 
-This project contains **CI/CD orchestration scripts and YAML-based pipelines** used to automate the **build, test, and deployment** of ROCm-compatible GPU compute workloads using **Azure DevOps Pipelines**.
+CUDA is **NVIDIA-specific**. It tightly couples hardware and software via proprietary drivers, compilers, and a runtime stack. AMD GPUs **do not** support CUDA natively. But if you're on Team Red (AMD), you’re not left behind—thanks to **HIP** and **ROCm**.
 
-It acts as a bridge between **traditional CUDA-style development** and AMD’s **open compute ecosystem**, supporting:
-- Kernel compilation using **LLVM-based HIP-Clang**
-- GPU-side task management and dispatch
-- Integration with **ROCr runtime**, ROCgdb, and device-level profilers
-- AMD GPU-specific system-level acceleration using **SSSA (Shader SIMD Stream Architecture)** and **Wavefront Execution Models**
 
+---
+## TL;DR for Devs & Engineers  
+- **NVIDIA uses:** `CUDA`, `cuDNN`, `nvcc`, `libcudart`, and `PTX kernels`
+- **AMD uses:** `HIP`, `ROCm`, `hipcc`, `ROCr runtime`, and `HSACO kernels`
 ---
 
 ##  Key Concepts & Stack Layers
@@ -31,9 +30,69 @@ It acts as a bridge between **traditional CUDA-style development** and AMD’s *
 
 ---
 
+## Pros:
+- Write once, run on both NVIDIA and AMD
+- Familiar to CUDA devs
+- Supported by PyTorch, TensorFlow via AMD extensions
+
+---
+
+## Translation Layer: HIP
+
+**HIP (Heterogeneous-Compute Interface for Portability)** is AMD’s CUDA-to-AMD translation layer. It allows CUDA-like syntax with `hipcc` to compile and run on both **AMD** and **NVIDIA**.
+
+```cpp
+// HIP example kernel
+__global__ void addKernel(float* c, const float* a, const float* b) {
+    int i = threadIdx.x;
+    c[i] = a[i] + b[i];
+}
+```
 Each ROCm component repo links to this central YAML orchestrator via `rocm-ci.yml`.
 
 ---
+
+## Kernel-Level Details
+
+AMD kernel compilation flow:
+1. Source (`.hip` or `.cpp`) → LLVM IR
+2. LLVM IR → HSA Intermediate Language (HSAIL)
+3. HSAIL → **HSACO (HSA Code Object)**
+4. Executed on GCN / RDNA via ROCr runtime
+
+_Think of HSACO like NVIDIA’s PTX, but for AMD hardware._
+
+##  Extra: SSSA Form, Vectorization & Tiling
+
+AMD compiler backends (LLVM + HCC) convert kernels into **Static Single Assignment (SSSA)** form for:
+-  **Aggressive loop tiling**
+-  **SIMD vectorization**
+-  **Wavefront-level parallelism** (similar to warps in CUDA)
+
+## Integrations & Support
+
+| Framework        | AMD ROCm / HIP Support |
+|------------------|------------------------|
+| PyTorch          | ✅ via `ROCm` builds   |
+| TensorFlow       | ✅ via `tensorflow-rocm` |
+| ONNX Runtime     | ✅                      |
+| Blender Cycles   | ✅ (OpenCL backend)     |
+| NumPy/SciPy      | ⚠️ Limited (via CuPy HIP port) |
+
+##  Tools for AMD GPU Devs
+
+- `hipcc` – HIP compiler (alias of `clang`)
+- `rocminfo` – Device capabilities viewer
+- `clinfo` – OpenCL device inspection
+- `rocm-smi` – AMD GPU status tool (temp, power, clocks)
+- `hipify-perl` – Convert `.cu` files to `.hip`
+
+##  Bonus: Future of AMD AI Stack
+
+- ROCm now supports **AI super-scaling (similar to Tensor Cores)** via `Matrix Cores` in MI300/Instinct series.
+- Upcoming **OpenCL 3.0 compliance**
+- Potential Vulkan Compute ↔ HIP interop for hybrid render/compute
+
 
 ##  ROCm GPU Compute Support (Advanced)
 
