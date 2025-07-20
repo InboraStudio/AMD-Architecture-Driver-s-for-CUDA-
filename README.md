@@ -9,6 +9,9 @@
 
 CUDA is **NVIDIA-specific**. It tightly couples hardware and software via proprietary drivers, compilers, and a runtime stack. AMD GPUs **do not** support CUDA natively. But if you're on Team Red (AMD), you’re not left behind—thanks to **HIP** and **ROCm**.
 
+<img width="1301" height="709" alt="Screenshot 2025-07-20 171223" src="https://github.com/user-attachments/assets/970553b0-06b3-4483-9337-5cb8fc3ff653" />
+
+
 
 ---
 ## TL;DR for Devs & Engineers  
@@ -28,7 +31,6 @@ CUDA is **NVIDIA-specific**. It tightly couples hardware and software via propri
 | **Azure DevOps Pipelines** | CI system to orchestrate and scale multi-GPU build/test processes |
 | **VMSS with Docker** | Enables scalable containerized GPU workloads for HIP build/test |
 
-<img width="1301" height="709" alt="Screenshot 2025-07-20 171223" src="https://github.com/user-attachments/assets/970553b0-06b3-4483-9337-5cb8fc3ff653" />
 
 
 ---
