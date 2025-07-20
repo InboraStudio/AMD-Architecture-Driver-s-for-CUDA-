@@ -137,7 +137,7 @@ runcmd:
   - usermod -aG docker $USER
   - systemctl restart docker
   - systemctl enable docker
-
+```
 
 ## Future Enhancements
  - Dynamic Buffer Kernel Dispatch using HIP Streams and Signal Queues
