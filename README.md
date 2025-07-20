@@ -5,7 +5,7 @@
 
 ---
 
-## 💡 Overview
+##  Overview
 
 This project contains **CI/CD orchestration scripts and YAML-based pipelines** used to automate the **build, test, and deployment** of ROCm-compatible GPU compute workloads using **Azure DevOps Pipelines**.
 
@@ -17,7 +17,7 @@ It acts as a bridge between **traditional CUDA-style development** and AMD’s *
 
 ---
 
-## 🧠 Key Concepts & Stack Layers
+##  Key Concepts & Stack Layers
 
 | Layer              | Description |
 |--------------------|-------------|
@@ -35,7 +35,7 @@ Each ROCm component repo links to this central YAML orchestrator via `rocm-ci.ym
 
 ---
 
-## 🛠 ROCm GPU Compute Support (Advanced)
+##  ROCm GPU Compute Support (Advanced)
 
 This project is designed to work with AMD’s modern GPU compute pipeline, including:
 - **Kernel Offloading:** HIP kernels are offloaded to dGPU or APU over PCIe/Infinity Fabric via ROCr
@@ -47,7 +47,7 @@ This project is designed to work with AMD’s modern GPU compute pipeline, inclu
 
 ---
 
-## 🔧 VMSS Setup for HIP Build Agents
+##  VMSS Setup for HIP Build Agents
 
 Azure VMSS instances provisioned for ROCm builds should include Docker and be ROCm-aware. Use the following `cloud-init` config in the **Custom Data** field during VM creation:
 
