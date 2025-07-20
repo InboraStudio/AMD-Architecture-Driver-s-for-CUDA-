@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <remote name="rocm-org" fetch="https://github.com/ROCm/" />
+    <default revision="refs/tags/rocm-6.4.1"
+     remote="rocm-org"
+     sync-c="true"
+     sync-j="4" />
+<!--list of projects for ROCm-->
+    <project category="libs" group="ml" name="composable_kernel" />
+    <project category="libs" group="ml" name="AMDMIGraphX" />
+    <project category="libs" group="ml" name="MIOpen" />
+    <project category="libs" group="ml" name="MIVisionX" />
+    <!-- rocAL -->
+    <project category="libs" group="ml" name="rocDecode" />
+    <project category="libs" group="ml" name="rpp" />
+    <project category="libs" group="communication" name="rccl" />
+    <project category="libs" group="math" name="half" />
+    <project category="libs" group="math" name="hipBLAS" />
+    <project category="libs" group="math" name="hipBLASLt" />
+    <project category="libs" group="math" name="hipFFT" />
+    <project category="libs" group="math" name="hipfort" />
+    <project category="libs" group="math" name="hipRAND" />
+    <project category="libs" group="math" name="hipSOLVER" />
+    <project category="libs" group="math" name="hipSPARSE" />
+    <project category="libs" group="math" name="hipSPARSELt" />
+    <project category="libs" group="math" name="rocALUTION" />
+    <project category="libs" group="math" name="rocBLAS" />
+    <project category="libs" group="math" name="rocFFT" />
+    <project category="libs" group="math" name="rocRAND" />
+    <project category="libs" group="math" name="rocSHMEM" />
+    <project category="libs" group="math" name="rocSOLVER" />
+    <project category="libs" group="math" name="rocSPARSE" />
+    <project category="libs" group="math" name="rocWMMA" />
+    <project category="libs" group="math" name="Tensile" />
+    <project category="libs" group="primitives" name="hipCUB" />
+    <project category="libs" group="primitives" name="hipTensor" />
+    <project category="libs" group="primitives" name="rocPRIM" />
+    <project category="libs" group="primitives" name="rocThrust" />
+    <project category="tools" group="dev" name="HIPIFY" />
+    <project category="tools" group="dev" name="ROCdbgapi" />
+    <project category="tools" group="dev" name="rocm-cmake" />
+    <project category="tools" group="dev" name="ROCgdb" />
+    <project category="tools" group="dev" name="rocr_debug_agent" />
+    <!-- omniperf, omnitrace -->
+    <project category="tools" group="perf" name="rocm_bandwidth_test" />
+    <project category="tools" group="perf" name="rocprofiler" />
+    <project category="tools" group="perf" name="roctracer" />
+    <project category="tools" group="system" name="amdsmi" />
+    <project category="tools" group="system" name="rocminfo" />
+    <project category="tools" group="system" name="rdc" />
+    <project category="tools" group="system" name="rocm_smi_lib" />
+    <project category="tools" group="system" name="ROCmValidationSuite" />
+    <!-- transferbench -->
+    <project category="compilers" name="llvm-project" />
+    <project category="compilers" name="flang" path="openmp-extras/flang" />
+    <project category="tools" name="spirv-llvm-translator" path="llvm-project/llvm/projects/SPIRV-LLVM-Translator" />
+    <project category="runtimes" name="clr" />
+    <project category="runtimes" name="HIP" />
+    <project category="runtimes" name="ROCR-Runtime" />
+
+    <!--<project name="ROCK-Kernel-Driver" />-->
+    <!--<project name="ROCT-Thunk-Interface" />-->
+    <!--<project name="rocm-core" />-->
+    <!--<project name="rocprofiler-register" />-->
+    <!--<project name="clang-ocl" />-->
+<!--HIP Projects-->
+    <!--<project name="hip-tests" />-->
+    <!--<project name="HIP-Examples" />-->
+    <!--<project name="hipother" />-->
+<!-- Projects for OpenMP-Extras -->
+    <!--<project name="aomp" path="openmp-extras/aomp" />-->
+    <!--<project name="aomp-extras" path="openmp-extras/aomp-extras" />-->
+</manifest>

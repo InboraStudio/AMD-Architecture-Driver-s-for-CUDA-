@@ -1,0 +1,148 @@
+parameters:
+# using a parameter instead of a strategy matrix allows job variables to be eval'd at compile-time rather than runtime
+- name: jobList
+  type: object
+  default:
+    - { os: ubuntu2204, target: gfx942, source: staging }
+    - { os: ubuntu2204, target: gfx90a, source: staging }
+    - { os: ubuntu2204, target: gfx1201, source: staging }
+    - { os: ubuntu2204, target: gfx1100, source: staging }
+    - { os: ubuntu2204, target: gfx1030, source: staging }
+    - { os: ubuntu2404, target: gfx942, source: staging }
+    - { os: ubuntu2404, target: gfx90a, source: staging }
+    - { os: ubuntu2404, target: gfx1201, source: staging }
+    - { os: ubuntu2404, target: gfx1100, source: staging }
+    - { os: ubuntu2404, target: gfx1030, source: staging }
+    - { os: almalinux8, target: gfx942, source: staging }
+    - { os: almalinux8, target: gfx90a, source: staging }
+    - { os: almalinux8, target: gfx1201, source: staging }
+    - { os: almalinux8, target: gfx1100, source: staging }
+    - { os: almalinux8, target: gfx1030, source: staging }
+- name: rocmDependencies
+  type: object
+  default:
+    - AMDMIGraphX
+    - amdsmi
+    - aomp-extras
+    - aomp
+    - clr
+    - composable_kernel
+    - half
+    - hip-tests
+    - hipBLAS
+    - hipBLAS-common
+    - hipBLASLt
+    - hipCUB
+    - hipFFT
+    - hipfort
+    - HIPIFY
+    - hipRAND
+    - hipSOLVER
+    - hipSPARSE
+    - hipSPARSELt
+    - hipTensor
+    - llvm-project
+    - MIOpen
+    - MIVisionX
+    - rccl
+    - rdc
+    - rocAL
+    - rocALUTION
+    - rocBLAS
+    - ROCdbgapi
+    - rocDecode
+    - rocFFT
+    - ROCgdb
+    - rocJPEG
+    - rocm-cmake
+    - rocm-core
+    - rocm-examples
+    - rocminfo
+    - rocMLIR
+    - ROCmValidationSuite
+    - rocm_bandwidth_test
+    - rocm_smi_lib
+    - rocPRIM
+    - rocprofiler-compute
+    - rocprofiler-register
+    - rocprofiler-sdk
+    - rocprofiler-systems
+    - rocprofiler
+    - rocPyDecode
+    - ROCR-Runtime
+    - rocRAND
+    - rocr_debug_agent
+    - rocSOLVER
+    - rocSPARSE
+    - rocThrust
+    - roctracer
+    - rocWMMA
+    - rpp
+    - TransferBench
+
+trigger: none
+pr: none
+schedules:
+- cron: '30 7 * * *'
+  displayName: Nightly build
+  branches:
+    include:
+    - develop
+  always: true
+
+jobs:
+- ${{ each job in parameters.jobList }}:
+  - job: rocm_nightly_${{ job.os }}_${{ job.target }}_${{ job.source }}
+    variables:
+    - group: common
+    - template: /.azuredevops/variables-global.yml
+    pool: ${{ variables.MEDIUM_BUILD_POOL }}
+    workspace:
+      clean: all
+    steps:
+    - task: DeleteFiles@1
+      displayName: 'Cleanup checkout space'
+      inputs:
+        SourceFolder: '$(Agent.BuildDirectory)/s'
+        Contents: '**/*'
+    - task: DeleteFiles@1
+      displayName: 'Cleanup Staging Area'
+      inputs:
+        SourceFolder: '$(Build.ArtifactStagingDirectory)'
+        Contents: '/**/*'
+        RemoveDotFiles: true
+    - script: df -h
+      displayName: System disk space before ROCm
+    - template: ${{ variables.CI_TEMPLATE_PATH }}/steps/dependencies-rocm.yml
+      parameters:
+        dependencySource: ${{ job.source }}
+        dependencyList: ${{ parameters.rocmDependencies }}
+        os: ${{ job.os }}
+        gpuTarget: ${{ job.target }}
+    - script: df -h
+      displayName: System disk space after ROCm
+    - script: du -sh $(Agent.BuildDirectory)/rocm
+      displayName: Uncompressed ROCm size
+    - template: ${{ variables.CI_TEMPLATE_PATH }}/steps/manifest.yml
+    - task: ArchiveFiles@2
+      displayName: Compress rocm-nightly
+      inputs:
+        rootFolderOrFile: $(Agent.BuildDirectory)/rocm
+        includeRootFolder: false
+        archiveType: tar
+        tarCompression: gz
+        archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.DefinitionName)_$(Build.BuildNumber)_ubuntu2204_${{ job.target }}.tar.gz
+    - script: du -sh $(Build.ArtifactStagingDirectory)
+      displayName: Compressed ROCm size
+    - task: PublishPipelineArtifact@1
+      displayName: 'Publish ROCm Nightly Artifact'
+      retryCountOnTaskFailure: 3
+      inputs:
+        targetPath: '$(Build.ArtifactStagingDirectory)'
+    - task: Bash@3
+      displayName: Save pipeline artifact file name
+      inputs:
+        workingDirectory: $(Pipeline.Workspace)
+        targetType: inline
+        script: echo "$(Build.DefinitionName)_$(Build.BuildNumber)_ubuntu2204_${{ job.target }}.tar.gz" >> pipelineArtifacts.txt
+    - template: ${{ variables.CI_TEMPLATE_PATH }}/steps/artifact-links.yml

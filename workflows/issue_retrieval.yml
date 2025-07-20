@@ -1,0 +1,22 @@
+name: Issue retrieval
+
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  auto-retrieve:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate a token
+        id: generate_token
+        uses: actions/create-github-app-token@v1
+        with:
+          app_id: ${{ secrets.ACTION_APP_ID }}
+          private_key: ${{ secrets.ACTION_PEM }}
+      - name: 'Retrieve Issue'
+        uses: harkgill-amd/rocm_issue_management@main
+        with:
+          authentication-token: ${{ steps.generate_token.outputs.token }}
+          github-organization: 'ROCm'
+          project-num: '6'
